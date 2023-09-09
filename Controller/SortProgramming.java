@@ -1,4 +1,3 @@
-
 package Controller;
 
 import Common.Algorithm;
@@ -38,18 +37,19 @@ public class SortProgramming extends Menu<String> {
     public void search() {
         final String[] mcSearch = { "Linear Search", "Binary Search", "Exit" };
         class SearchMenu extends Menu<String> {
-
             public SearchMenu() {
                 super("Search Option", mcSearch);
             }
 
             @Override
             public synchronized void execute(int n) {
-                algorithm.buddleSort(array);
                 library.display(array);
                 int value = library.getInt("\nEnter number to find: ", 1, 100);
                 switch (n) {
                     case 1:
+                        System.out.println(
+                                "Found value: " + value + " at index: " + algorithm.linearSearch(array, value));
+                        System.out.println("");
                         break;
                     case 2:
                         System.out.println(

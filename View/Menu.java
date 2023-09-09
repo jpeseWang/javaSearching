@@ -7,11 +7,6 @@ package View;
 import Common.Library;
 import java.util.ArrayList;
 
-/**
- *
- * @author ACER
- * @param <T>
- */
 public abstract class Menu<T> {
 
     protected String title;
@@ -30,7 +25,7 @@ public abstract class Menu<T> {
         }
     }
 
-    //-------------------------------------------
+    // -------------------------------------------
     public void display() {
         System.out.println(title);
         System.out.println("--------------------------------");
@@ -39,16 +34,16 @@ public abstract class Menu<T> {
         }
         System.out.println("--------------------------------");
     }
-//-------------------------------------------
+    // -------------------------------------------
 
     public int getSelected() {
         display();
         return l.getInt("Enter your choice", 1, mChon.size() + 1);
     }
-//-------------------------------------------
+    // -------------------------------------------
 
     public abstract void execute(int n);
-//-------------------------------------------
+    // -------------------------------------------
 
     public void run() {
         while (true) {
