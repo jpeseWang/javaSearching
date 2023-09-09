@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Common;
 
-/**
- *
- * @author ACER
- */
 public class Algorithm {
 
     public void buddleSort(int[] array) {
@@ -23,12 +16,12 @@ public class Algorithm {
     }
 
     public int partition(int[] array, int left, int right) {
-        //exam: 1 12 5 [7] 6 9 2 : 7 is pivot
-        //Run from left: i - Run from right: j
+        // exam: 1 12 5 [7] 6 9 2 : 7 is pivot
+        // Run from left: i - Run from right: j
         int i = left, j = right;
-        //Instance a variable: pivot - trục
+        // Instance a variable: pivot - trục
         int pivot = array[(left + right) / 2];
-        //Create a temp variable
+        // Create a temp variable
         int tmp;
         while (i <= j) {
             while (array[i] < pivot) {
@@ -38,42 +31,18 @@ public class Algorithm {
                 j--;
             }
             if (i <= j) {
-                //Execute swap between value of index [i] and value of index [j]
+                // Execute swap between value of index [i] and value of index [j]
                 tmp = array[i];
                 array[i] = array[j];
                 array[j] = tmp;
                 i++;
                 j--;
             }
-        };
+        }
+        ;
         return i;
     }
 
-    public void quickSort(int[] array, int left, int right) {
-        //Search index of array - vách ngăn
-        int index = partition(array, left, right);
-        if (left < index - 1) {
-            quickSort(array, left, index - 1);
-        }
-        if (index < right) {
-            quickSort(array, index, right);
-        }
-    }
-
-    /*
-    public int binarySearch(int[] array, int value, int left, int right) {
-        if (left > right) {
-            return -1;
-        }
-        int middle = (left + right) / 2;
-        if (array[middle] == value) {
-            return middle;
-        } else if (array[middle] > value) {
-            return binarySearch(array, value, left, middle - 1);
-        } else {
-            return binarySearch(array, value, middle + 1, right);
-        }
-    }*/
     public int binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
